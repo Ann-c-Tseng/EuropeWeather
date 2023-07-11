@@ -99,13 +99,18 @@ $(document).ready(function(){
                         weatherDisc = "Thunderstorm"
                         imgUrl = "tstorm.png";
                     } else { //windy
+                        weatherDisc = "Windy"
                         imgUrl = "windy.png";
                     }
                     console.log(imgUrl);
 
                     // console.log(month + " | " + day + " | " + year);
                     $('#card'+count3).append('<p class="dateText">' + month + ' ' + day + ' ' + year + '</p>');
-                    $('#card'+count3).append('<img class=weatherImg src="images/' + imgUrl + '" alt="weather icon" width="130" height="65"/>');
+                    if(imgUrl != "windy.png") {
+                        $('#card'+count3).append('<img class="weatherImg" src="images/' + imgUrl + '" alt="weather icon" width="130" height="65"/>');
+                    } else {
+                        $('#card'+count3).append('<img class="windyWeatherImg" src="images/' + imgUrl + '" alt="weather icon" width="65" height="65"/>');
+                    }
                     $('#card'+count3).append('<p class="weatherText">' + weatherDisc + '</p>');
                     $('#card'+count3).append('<p class="tempMaxText"> Max: ' + tempMax + '°C </p>');
                     $('#card'+count3).append('<p class="tempMinText"> Min: ' + tempMin + '°C </p>');
