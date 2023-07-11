@@ -102,7 +102,7 @@ $(document).ready(function(){
                         weatherDisc = "Windy"
                         imgUrl = "windy.png";
                     }
-                    console.log(imgUrl);
+                    // console.log(imgUrl);
 
                     // console.log(month + " | " + day + " | " + year);
                     $('#card'+count3).append('<p class="dateText">' + month + ' ' + day + ' ' + year + '</p>');
