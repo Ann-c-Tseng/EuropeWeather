@@ -26,12 +26,21 @@ $(document).ready(function(){
         })
 
         $('#citySelectElement').change(function() {
+            var elCardsDiv = document.getElementById('weeklyCardElements');
+            var weeklyCardsLoaded = false;
+            var bufferDiv = document.getElementById('bufferElement');
+            var buffer = document.createElement("p");
+            bufferDiv.appendChild(buffer);
+            const textNode = document.createTextNode("Loading results...");
+            buffer.appendChild(textNode);
+            buffer.className = "bufferText";
+            $('.bufferText').show();
+
             var selectedOptionArray = cityArray[$(this).find(":selected").val()];
             // console.log(selectedOptionArray);
             var latitude = selectedOptionArray[0];
             var longitude = selectedOptionArray[1];
             var url = 'http://www.7timer.info/bin/api.pl?lon=' + longitude + '&lat=' + latitude + '&product=civillight&output=json';
-            var elCardsDiv = document.getElementById('weeklyCardElements');
 
             $.getJSON(url, function(data) {
                 // console.log(data.dataseries);
@@ -43,6 +52,8 @@ $(document).ready(function(){
                     // console.log(date + " | " + weather + " | " + tempMax + " | " + tempMin);
                     elCardsDiv.innerHTML = elCardsDiv.innerHTML +
                     '<div class="card" id="card'+ count3 + '"></div>';
+                    
+                    $('.card').hide(); //Hide the cards until it is ready to be loaded after buffer
 
                     var month = date.slice(4, 6)
                     var day = date.slice(6, 8)
@@ -50,7 +61,7 @@ $(document).ready(function(){
 
                     //Find corresponding weather image
                     var imgUrl = "";
-                    console.log(weather);
+                    // console.log(weather);
                     var weatherDisc = "";
 
                     if(weather === "clear") {
@@ -115,11 +126,20 @@ $(document).ready(function(){
                     $('#card'+count3).append('<p class="tempMaxText"> Max: ' + tempMax + '°C </p>');
                     $('#card'+count3).append('<p class="tempMinText"> Min: ' + tempMin + '°C </p>');
                 }
+
+                weeklyCardsLoaded = true;
+    
+                if(weeklyCardsLoaded == true) {
+                    $('.bufferText').remove();
+                    $('.card').show();
+                }
             })
 
             //Remove past innerHTML cards if chosen a new city option.
             if(elCardsDiv.children.length){
                 $('#weeklyCardElements').empty();
             } 
+
+            weeklyCardsLoaded = false;
         })
 })
