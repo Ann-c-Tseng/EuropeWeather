@@ -113,18 +113,22 @@ $(document).ready(function(){
                         weatherDisc = "Windy"
                         imgUrl = "windy.png";
                     }
-                    // console.log(imgUrl);
 
                     // console.log(month + " | " + day + " | " + year);
+                    var cardBanner = document.createElement("div");
+                    cardBanner.className = "cardBanner";
+                    cardBanner.id = "cardBanner"+count3;
+
                     $('#card'+count3).append('<p class="dateText">' + month + ' ' + day + ' ' + year + '</p>');
                     if(imgUrl != "windy.png") {
                         $('#card'+count3).append('<img class="weatherImg" src="images/' + imgUrl + '" alt="weather icon" width="130" height="65"/>');
                     } else {
                         $('#card'+count3).append('<img class="windyWeatherImg" src="images/' + imgUrl + '" alt="weather icon" width="65" height="65"/>');
                     }
-                    $('#card'+count3).append('<p class="weatherText">' + weatherDisc + '</p>');
-                    $('#card'+count3).append('<p class="tempMaxText"> Max: ' + tempMax + '°C </p>');
-                    $('#card'+count3).append('<p class="tempMinText"> Min: ' + tempMin + '°C </p>');
+                    $('#card'+count3).append(cardBanner);
+                    $('#cardBanner'+count3).append('<p class="weatherText">' + weatherDisc + '</p>');
+                    $('#cardBanner'+count3).append('<p class="tempMaxText"> Max: ' + tempMax + '°C </p>');
+                    $('#cardBanner'+count3).append('<p class="tempMinText"> Min: ' + tempMin + '°C </p>');
                 }
 
                 weeklyCardsLoaded = true;

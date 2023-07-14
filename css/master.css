@@ -1,10 +1,14 @@
 body {
-    background-color: #fff7f7;
-    color: black;
+    background-color: #f6f6f6;
+    color: rgb(11, 11, 11);
     padding: 128px;
     text-align: center;
     align-items: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#title {
+    font-weight: 100;
 }
 
 #citySelectElement {
@@ -16,18 +20,33 @@ body {
 
 #weeklyCardElements {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 .card {
+    flex: 0 0 auto;
     text-align: center;
     border: 1px solid rgb(78, 78, 78);
     border-radius: 5px;
-    width: 10%;
+    width: 180px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: azure;
 }
 
-.card p {
-    color: blue;
+.cardBanner {
+    background-color: rgb(173, 185, 227);
+    height: 120px;
+    width: 180px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-top: 16px;
+}
+
+.weatherText {
+    font-weight: 600;
+}
+
+.dateText {
+    font-weight: 100;
 }
