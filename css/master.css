@@ -35,7 +35,7 @@ body {
 }
 
 .cardBanner {
-    background-color: rgb(173, 185, 227);
+    background-color: rgb(173, 185, 227); 
     height: 120px;
     width: 180px;
     padding-top: 16px;
@@ -45,6 +45,15 @@ body {
 
 .weatherText {
     font-weight: 600;
+    color: white;
+}
+
+.tempMaxText {
+    color: white;
+}  
+
+.tempMinText {
+    color: white;
 }
 
 .dateText {
