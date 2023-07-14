@@ -10,7 +10,7 @@ I started by first data-organizing the csv's city, country, and respective longi
 ### Tools Used:
 JavaScript, Jquery, HTML, CSS, CSV of various European cities and their longitude/latitude locations, and 7timer API for weather forcast
 
-### Project Link: 
+### Project Link: https://ann-c-tseng.github.io/EuropeWeatherView/
 
 More info on 7timer: http://www.7timer.info/doc.php#introduction <br>
 Project prompt from https://www.coursera.org/learn/showcase-build-a-website-api-html-javascript-json/
