@@ -12,5 +12,5 @@ JavaScript, Jquery, HTML, CSS, CSV of various European cities and their longitud
 
 ### Project Link: 
 
-More info on 7timer: http://www.7timer.info/doc.php#introduction
+More info on 7timer: http://www.7timer.info/doc.php#introduction <br>
 Project prompt from https://www.coursera.org/learn/showcase-build-a-website-api-html-javascript-json/
